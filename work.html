@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" href="favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ADDINGYOU | Systems-First Marketing</title>
 <meta name="description" content="UK-based outsourced marketing team. CRM, AI automation, lead generation, social media and paid ads. We build the systems. We run the marketing.">
@@ -680,10 +682,13 @@ footer {
   .proc-g { grid-template-columns: repeat(2,1fr); }
 }
 @media (max-width: 768px) {
+  .mob-2col { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .mob-4col { grid-template-columns: repeat(2,1fr) !important; gap: 1.25rem !important; }
+  .mob-2col-sm { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
   nav, nav.inked, nav.paled { padding-left: 1.5rem; padding-right: 1.5rem; }
   .nlinks { display: none; }
   .nham { display: flex; }
-  .hero, .sec, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+  section, .hero, .sec, footer { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
   .hinner { padding-top: 8rem; }
   .scrl { display: none; }
   .svcs-g { grid-template-columns: 1fr; }
@@ -829,7 +834,7 @@ footer {
 <!-- WHAT MAKES A RESULT -->
 <section style="background:var(--paper2);padding:6rem 3.5rem;border-top:1px solid rgba(0,0,0,.06)">
   <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:start">
+    <div class="mob-2col" style="display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:start">
       <div>
         <span class="eye rv" style="margin-bottom:1rem">How we measure it</span>
         <h2 class="rv d1" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,3.5vw,3.8rem);font-weight:700;letter-spacing:-.035em;line-height:1.02;color:var(--void);margin-bottom:1.5rem">We only track things<br><span style="color:var(--vio)">that matter.</span></h2>
@@ -858,7 +863,7 @@ footer {
   <div class="wrap">
     <span class="eye eye-lt rv" style="margin-bottom:1rem">Where we work best</span>
     <h2 class="rv d1" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,3.5vw,3.5rem);font-weight:700;letter-spacing:-.035em;line-height:1.02;color:var(--white);margin-bottom:4rem">Industries we know<br><span style="color:var(--vio)">inside out.</span></h2>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem">
+    <div class="mob-4col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem">
       <div class="rv" style="padding:2rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px">
         <p style="font-size:2rem;margin-bottom:1rem">&#9917;</p>
         <p style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.5rem">Sport &amp; Fitness</p>
@@ -888,7 +893,7 @@ footer {
   <div class="wrap">
     <span class="eye rv" style="margin-bottom:1rem">What clients say</span>
     <h2 class="rv d1" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,3.5vw,3.5rem);font-weight:700;letter-spacing:-.035em;line-height:1.02;color:var(--void);margin-bottom:3.5rem">Real feedback.<br><span style="color:var(--vio)">Not testimonials we wrote.</span></h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+    <div class="mob-2col-sm" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
       <div class="rv" style="padding:2.5rem;background:var(--paper2);border:1px solid rgba(0,0,0,.08);border-radius:20px">
         <p style="font-size:1.5rem;color:var(--vio);margin-bottom:1.25rem">&#8220;</p>
         <p style="font-size:1rem;font-weight:400;line-height:1.85;color:var(--txt-lt);margin-bottom:1.75rem">The CRM they built has completely changed how we handle leads. Every enquiry is tracked, every follow-up is automated, and I can see exactly where my pipeline stands without asking anyone.</p>
