@@ -48,10 +48,24 @@
     if (timer) { clearInterval(timer); timer = null; }
   }
 
+  var hoverTimer = null;
   items.forEach(function (item, i) {
-    item.addEventListener('click', function () { stopAuto(); activate(i); });
+    item.addEventListener('click', function () {
+      if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
+      stopAuto();
+      if (i !== current || !item.classList.contains('active')) activate(i);
+    });
+    /* hover intent: only switch once the cursor settles on an item */
     item.addEventListener('mouseenter', function () {
-      if (window.matchMedia('(hover:hover)').matches) { stopAuto(); activate(i); }
+      if (!window.matchMedia('(hover:hover)').matches) return;
+      if (hoverTimer) clearTimeout(hoverTimer);
+      hoverTimer = setTimeout(function () {
+        hoverTimer = null;
+        if (i !== current) { stopAuto(); activate(i); }
+      }, 150);
+    });
+    item.addEventListener('mouseleave', function () {
+      if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
     });
   });
 

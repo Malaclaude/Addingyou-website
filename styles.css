@@ -355,7 +355,8 @@ nav#nav.inked { border-bottom-color: var(--line); }
   font-family: inherit; color: inherit; cursor: pointer;
   padding: 1.15rem 0.9rem 1.15rem 0.6rem;
   border-left: 2px solid transparent;
-  transition: background 0.25s, border-color 0.25s, padding 0.25s var(--ease);
+  transition: background 0.35s var(--ease), border-color 0.35s var(--ease),
+              padding 0.35s var(--ease), box-shadow 0.35s var(--ease);
 }
 .show-item .si-n {
   font-size: 0.78rem; font-weight: 600; color: var(--ink-3);
@@ -377,10 +378,14 @@ nav#nav.inked { border-bottom-color: var(--line); }
 .pane {
   position: absolute; inset: 0;
   display: flex; flex-direction: column; gap: 1rem;
-  opacity: 0; transform: translateY(12px); pointer-events: none;
-  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+  opacity: 0; transform: translateY(10px) scale(0.992); pointer-events: none;
+  transition: opacity 0.4s var(--ease-io), transform 0.4s var(--ease-io);
+  will-change: opacity, transform;
 }
-.pane.active { opacity: 1; transform: none; pointer-events: auto; }
+.pane.active {
+  opacity: 1; transform: none; pointer-events: auto;
+  transition: opacity 0.65s var(--ease) 0.18s, transform 0.65s var(--ease) 0.18s;
+}
 
 .pane-cap {
   display: flex; align-items: center; gap: 0.7rem;
@@ -415,13 +420,13 @@ nav#nav.inked { border-bottom-color: var(--line); }
 .mk-body { flex: 1; padding: 1.1rem; display: flex; flex-direction: column; gap: 0.7rem; }
 
 /* staged entrance for elements inside the active pane */
-.pane .mk-in { opacity: 0; transform: translateY(8px); }
-.pane.active .mk-in { animation: mkIn 0.5s var(--ease) forwards; }
-.pane.active .mk-in:nth-of-type(1) { animation-delay: 0.15s; }
-.pane.active .mk-in:nth-of-type(2) { animation-delay: 0.55s; }
-.pane.active .mk-in:nth-of-type(3) { animation-delay: 0.95s; }
-.pane.active .mk-in:nth-of-type(4) { animation-delay: 1.35s; }
-.pane.active .mk-in:nth-of-type(5) { animation-delay: 1.7s; }
+.pane .mk-in { opacity: 0; transform: translateY(7px); }
+.pane.active .mk-in { animation: mkIn 0.7s var(--ease) forwards; }
+.pane.active .mk-in:nth-of-type(1) { animation-delay: 0.3s; }
+.pane.active .mk-in:nth-of-type(2) { animation-delay: 0.6s; }
+.pane.active .mk-in:nth-of-type(3) { animation-delay: 0.9s; }
+.pane.active .mk-in:nth-of-type(4) { animation-delay: 1.15s; }
+.pane.active .mk-in:nth-of-type(5) { animation-delay: 1.35s; }
 @keyframes mkIn { to { opacity: 1; transform: none; } }
 
 /* chat */
