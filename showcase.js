@@ -1,16 +1,25 @@
-/* Interactive service showcase: list drives the preview panel.
-   Auto-rotates until the visitor chooses; counters re-run per activation. */
+/* Interactive service showcase: autoplays through the six services while
+   in view; interaction borrows control, autoplay resumes after a pause.
+   The active item's gold progress line shows the cycle. */
 (function () {
   'use strict';
 
   var grid = document.querySelector('.show-grid');
   if (!grid) return;
 
+  var STEP_MS = 5500;    /* keep in sync with the showProg animation in styles.css */
+  var RESUME_MS = 8000;  /* idle time before autoplay takes over again */
+
   var items = Array.prototype.slice.call(grid.querySelectorAll('.show-item'));
   var panes = Array.prototype.slice.call(grid.querySelectorAll('.pane'));
   var current = 0;
-  var timer = null;
-  var userDriven = false;
+  var interval = null;
+  var resumeTimer = null;
+  var hoverTimer = null;
+  var inView = false;
+  var hovered = false;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function countUp(el) {
     var target = parseFloat(el.dataset.t);
@@ -43,17 +52,38 @@
     });
   }
 
-  function stopAuto() {
-    userDriven = true;
-    if (timer) { clearInterval(timer); timer = null; }
+  function playing() { return interval !== null; }
+
+  function play() {
+    if (reduced || playing() || !inView || hovered) return;
+    grid.classList.add('auto');
+    /* restart the progress line on the current item */
+    var active = items[current];
+    active.classList.remove('active');
+    void active.offsetWidth;
+    active.classList.add('active');
+    interval = setInterval(function () {
+      activate((current + 1) % panes.length);
+    }, STEP_MS);
   }
 
-  var hoverTimer = null;
+  function pause() {
+    grid.classList.remove('auto');
+    if (interval) { clearInterval(interval); interval = null; }
+  }
+
+  /* user takes over; autoplay returns after RESUME_MS of quiet */
+  function takeOver(i) {
+    pause();
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(function () { resumeTimer = null; play(); }, RESUME_MS);
+    if (i !== current || !items[i].classList.contains('active')) activate(i);
+  }
+
   items.forEach(function (item, i) {
     item.addEventListener('click', function () {
       if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
-      stopAuto();
-      if (i !== current || !item.classList.contains('active')) activate(i);
+      takeOver(i);
     });
     /* hover intent: only switch once the cursor settles on an item */
     item.addEventListener('mouseenter', function () {
@@ -61,7 +91,7 @@
       if (hoverTimer) clearTimeout(hoverTimer);
       hoverTimer = setTimeout(function () {
         hoverTimer = null;
-        if (i !== current) { stopAuto(); activate(i); }
+        if (i !== current) takeOver(i);
       }, 150);
     });
     item.addEventListener('mouseleave', function () {
@@ -69,26 +99,28 @@
     });
   });
 
-  grid.addEventListener('mouseenter', function () { if (timer) { clearInterval(timer); timer = null; } });
-  grid.addEventListener('mouseleave', function () { startAuto(); });
+  /* pause while the visitor's cursor is inside the showcase (hover devices only) */
+  grid.addEventListener('mouseenter', function () {
+    if (!window.matchMedia('(hover:hover)').matches) return;
+    hovered = true; pause();
+  });
+  grid.addEventListener('mouseleave', function () {
+    hovered = false;
+    if (!resumeTimer) play();
+  });
 
-  function startAuto() {
-    if (userDriven || timer) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    timer = setInterval(function () {
-      activate((current + 1) % panes.length);
-    }, 5000);
-  }
-
-  /* begin when the section first scrolls into view */
-  var seen = new IntersectionObserver(function (entries) {
+  /* run only while the section is on screen */
+  var seen = false;
+  var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        activate(current);
-        startAuto();
-        seen.disconnect();
+      inView = e.isIntersecting;
+      if (inView) {
+        if (!seen) { seen = true; activate(current); }
+        if (!resumeTimer) play();
+      } else {
+        pause();
       }
     });
   }, { threshold: 0.25 });
-  seen.observe(grid);
+  io.observe(grid);
 })();

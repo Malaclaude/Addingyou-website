@@ -371,6 +371,21 @@ nav#nav.inked { border-bottom-color: var(--line); }
   padding-left: 1rem;
   box-shadow: var(--shadow-card);
 }
+.show-item { position: relative; overflow: hidden; }
+.show-item.active::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-lt));
+  transform: scaleX(0); transform-origin: left; opacity: 0;
+}
+/* progress line runs only while autoplay is driving; duration matches STEP_MS in showcase.js */
+.show-grid.auto .show-item.active::after {
+  opacity: 1;
+  animation: showProg 5.5s linear forwards;
+}
+@keyframes showProg { to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .show-grid.auto .show-item.active::after { animation: none; opacity: 0; }
+}
 .show-item.active .si-n { color: var(--gold); }
 .show-item.active .si-arr { opacity: 1; transform: none; color: var(--olive-deep); }
 
