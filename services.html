@@ -77,48 +77,186 @@
   <div class="wrap">
     <span class="eye rv">The services</span>
     <h2 class="hd rv d1">Built for members, bookings<br>and busy <em>front desks.</em></h2>
-    <div class="svc-list">
-      <div class="svl rv">
-        <span class="svl-n">01</span>
-        <div>
-          <h3>CRM &amp; systems</h3>
-          <p>We build your CRM from the ground up. Pipelines, automations, member and lead tracking, and live reporting that gives you a real picture of your venue every day. Fully custom-built and branded for your business.</p>
-        </div>
+    <div class="show-grid rv d1">
+      <div class="show-list" role="tablist" aria-label="What we build">
+
+        <button class="show-item" role="tab" aria-selected="false" id="st1" aria-controls="sp1">
+          <span class="si-n">01</span>
+          <div>
+            <h3>CRM &amp; systems</h3>
+            <p>Custom-built pipelines, automations and member tracking. The operating backbone of your venue, branded to your business.</p>
+          </div>
+          <span class="si-arr" aria-hidden="true">&#8599;</span>
+        </button>
+
+        <button class="show-item" role="tab" aria-selected="false" id="st2" aria-controls="sp2">
+          <span class="si-n">02</span>
+          <div>
+            <h3>Conversational AI</h3>
+            <p>Enquiries answered, qualified and booked 24 hours a day. We build, train and maintain the AI.</p>
+          </div>
+          <span class="si-arr" aria-hidden="true">&#8599;</span>
+        </button>
+
+        <button class="show-item" role="tab" aria-selected="false" id="st3" aria-controls="sp3">
+          <span class="si-n">03</span>
+          <div>
+            <h3>Lead generation</h3>
+            <p>Meta campaigns that generate qualified enquiries, not clicks. 200+ leads at under £3 each.</p>
+          </div>
+          <span class="si-arr" aria-hidden="true">&#8599;</span>
+        </button>
+
+        <button class="show-item" role="tab" aria-selected="false" id="st4" aria-controls="sp4">
+          <span class="si-n">04</span>
+          <div>
+            <h3>Social media</h3>
+            <p>Calendar, creative and consistency handled. Three to four posts per week, every week.</p>
+          </div>
+          <span class="si-arr" aria-hidden="true">&#8599;</span>
+        </button>
+
+        <button class="show-item" role="tab" aria-selected="false" id="st5" aria-controls="sp5">
+          <span class="si-n">05</span>
+          <div>
+            <h3>Paid advertising</h3>
+            <p>Spend managed and optimised weekly. Every pound tracked to a lead, booking or membership.</p>
+          </div>
+          <span class="si-arr" aria-hidden="true">&#8599;</span>
+        </button>
+
+        <button class="show-item" role="tab" aria-selected="false" id="st6" aria-controls="sp6">
+          <span class="si-n">06</span>
+          <div>
+            <h3>Reporting &amp; MI</h3>
+            <p>Live dashboards connected to your CRM. You always know where you stand without asking.</p>
+          </div>
+          <span class="si-arr" aria-hidden="true">&#8599;</span>
+        </button>
       </div>
-      <div class="svl rv d1">
-        <span class="svl-n">02</span>
-        <div>
-          <h3>Conversational AI</h3>
-          <p>AI assistants that answer enquiries, qualify leads and take bookings 24 hours a day. No missed messages when the front desk is closed. We build, train and maintain the AI so you never have to touch it.</p>
+
+      <div class="show-panel">
+
+        <!-- 01 CRM pipeline -->
+        <div class="pane" id="sp1" role="tabpanel" aria-labelledby="st1">
+          <div class="mockup">
+            <div class="mk-head"><span class="mk-dots"><span></span><span></span><span></span></span>Member pipeline<span class="mk-live">live</span></div>
+            <div class="mk-body">
+              <div class="mk-pipe">
+                <div class="mk-col">
+                  <h5>New enquiry <em>4</em></h5>
+                  <div class="mk-lead mk-in">Rachael W<span>Instagram DM &middot; 2 min ago</span></div>
+                  <div class="mk-lead mk-in">Tom H<span>Meta ad &middot; 11 min ago</span></div>
+                </div>
+                <div class="mk-col">
+                  <h5>Trial booked <em>3</em></h5>
+                  <div class="mk-lead hot mk-in">Sarah P<span>Sat 09:00 &middot; reminder sent</span></div>
+                </div>
+                <div class="mk-col">
+                  <h5>Member <em>128</em></h5>
+                  <div class="mk-lead mk-in">Donna P<span>Joined this week</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="pane-cap">Every stage visible. <strong>Nothing falls through.</strong></p>
         </div>
-      </div>
-      <div class="svl rv d2">
-        <span class="svl-n">03</span>
-        <div>
-          <h3>Lead generation</h3>
-          <p>Meta campaigns that generate qualified enquiries, not just clicks. Built on proven creative frameworks and tracked end to end through your CRM, from first click to signed-up member. We have generated 200+ leads at under &pound;3 per lead in competitive niches.</p>
+
+        <!-- 02 AI chat -->
+        <div class="pane" id="sp2" role="tabpanel" aria-labelledby="st2">
+          <div class="mockup">
+            <div class="mk-head"><span class="mk-dots"><span></span><span></span><span></span></span>Instagram DMs<span class="mk-live">replying</span></div>
+            <div class="mk-body">
+              <div class="mk-msg in mk-in">Do you have any bays free on Saturday morning?<span class="mk-time">21:47</span></div>
+              <div class="mk-msg out mk-in">We do. Two bays free from 9am on Saturday. Want me to book you in?<span class="mk-time">21:47 &middot; answered in 4 seconds</span></div>
+              <div class="mk-msg in mk-in">Yes please, 9am for two people.<span class="mk-time">21:49</span></div>
+              <div class="mk-chip mk-in"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Booking confirmed &middot; Sat 09:00</div>
+            </div>
+          </div>
+          <p class="pane-cap">Answered at 9pm on a Sunday. <strong>24/7, no staff hours.</strong></p>
         </div>
-      </div>
-      <div class="svl rv">
-        <span class="svl-n">04</span>
-        <div>
-          <h3>Social media</h3>
-          <p>Content strategy and execution that builds local authority and drives enquiries. We handle the calendar, the creative and the consistency. Three to four posts per week, every week, without you lifting a finger.</p>
+
+        <!-- 03 Lead gen metrics -->
+        <div class="pane" id="sp3" role="tabpanel" aria-labelledby="st3">
+          <div class="mockup">
+            <div class="mk-head"><span class="mk-dots"><span></span><span></span><span></span></span>Campaign performance<span class="mk-live">live</span></div>
+            <div class="mk-body">
+              <div class="mk-kpis mk-in">
+                <div class="mk-kpi"><span class="k-v mk-cnt" data-t="200" data-s="+">0</span><span class="k-l">Qualified leads</span></div>
+                <div class="mk-kpi"><span class="k-v mk-cnt" data-t="3" data-p="&pound;">0</span><span class="k-l">Cost per lead<span class="k-d">sector &pound;15&ndash;40</span></span></div>
+                <div class="mk-kpi"><span class="k-v">100%</span><span class="k-l">Tracked in CRM</span></div>
+              </div>
+              <svg class="mk-spark mk-in" viewBox="0 0 320 90" fill="none" preserveAspectRatio="none" style="flex:1; min-height:80px;">
+                <path class="line" d="M6 74 40 68 74 70 108 58 142 61 176 47 210 50 244 34 278 30 314 16" stroke="#75845A" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M6 74 40 68 74 70 108 58 142 61 176 47 210 50 244 34 278 30 314 16 314 88 6 88Z" fill="url(#sparkFill)" opacity="0.35"/>
+                <defs><linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#DDE7C9"/><stop offset="1" stop-color="#DDE7C9" stop-opacity="0"/></linearGradient></defs>
+              </svg>
+            </div>
+          </div>
+          <p class="pane-cap">1IRON campaign results. <strong>Real numbers, not projections.</strong></p>
         </div>
-      </div>
-      <div class="svl rv d1">
-        <span class="svl-n">05</span>
-        <div>
-          <h3>Paid advertising</h3>
-          <p>Meta spend managed and optimised weekly. Every pound tracked back to a lead, a booking or a membership. No vanity metrics, no impressions dressed up as results. Just numbers that show up in your CRM and your bank account.</p>
+
+        <!-- 04 Social calendar -->
+        <div class="pane" id="sp4" role="tabpanel" aria-labelledby="st4">
+          <div class="mockup">
+            <div class="mk-head"><span class="mk-dots"><span></span><span></span><span></span></span>Content week<span class="mk-live">scheduled</span></div>
+            <div class="mk-body">
+              <div class="mk-week mk-in">
+                <div class="mk-day"><b>MON</b><div class="mk-post reel">Reel &middot; inside the bays</div></div>
+                <div class="mk-day"><b>TUE</b></div>
+                <div class="mk-day"><b>WED</b><div class="mk-post">Member story</div><div class="mk-post story">Offer story</div></div>
+                <div class="mk-day"><b>THU</b></div>
+                <div class="mk-day"><b>FRI</b><div class="mk-post reel">Reel &middot; coach tips</div></div>
+              </div>
+              <div class="mk-kpis mk-in">
+                <div class="mk-kpi"><span class="k-v mk-cnt" data-t="700" data-s="k+">0</span><span class="k-l">Organic views</span></div>
+                <div class="mk-kpi"><span class="k-v">3x</span><span class="k-l">Posts per week</span></div>
+                <div class="mk-kpi"><span class="k-v">&pound;0</span><span class="k-l">Paid promotion</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="pane-cap">1IRON&rsquo;s TikTok, built from zero. <strong>Content strategy alone.</strong></p>
         </div>
-      </div>
-      <div class="svl rv d2">
-        <span class="svl-n">06</span>
-        <div>
-          <h3>Reporting &amp; MI</h3>
-          <p>Live dashboards showing leads, bookings, cost per acquisition and growth, fully connected to your CRM. You always know exactly where you stand without asking anyone.</p>
+
+        <!-- 05 Paid ads funnel -->
+        <div class="pane" id="sp5" role="tabpanel" aria-labelledby="st5">
+          <div class="mockup">
+            <div class="mk-head"><span class="mk-dots"><span></span><span></span><span></span></span>Spend to revenue<span class="mk-live">tracking</span></div>
+            <div class="mk-body" style="justify-content:center;">
+              <div class="mk-funnel mk-in">
+                <div class="mk-stage"><span class="s-v">Click</span><span class="s-l">Meta ad</span></div>
+                <svg class="mk-link" width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h14m-5-5 5 5-5 5"/></svg>
+                <div class="mk-stage"><span class="s-v">Lead</span><span class="s-l">&pound;3 each</span></div>
+                <svg class="mk-link" width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h14m-5-5 5 5-5 5"/></svg>
+                <div class="mk-stage"><span class="s-v">Booking</span><span class="s-l">auto-confirmed</span></div>
+                <svg class="mk-link" width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h14m-5-5 5 5-5 5"/></svg>
+                <div class="mk-stage"><span class="s-v">Member</span><span class="s-l">revenue attributed</span></div>
+              </div>
+              <p class="mk-in" style="text-align:center; font-size:0.8rem; color:var(--ink-3); margin-top:0.8rem;">No spend without a traceable return. If an ad does not produce leads, it is switched off.</p>
+            </div>
+          </div>
+          <p class="pane-cap">Every pound has a paper trail. <strong>No vanity metrics.</strong></p>
         </div>
+
+        <!-- 06 Reporting dashboard -->
+        <div class="pane" id="sp6" role="tabpanel" aria-labelledby="st6">
+          <div class="mockup">
+            <div class="mk-head"><span class="mk-dots"><span></span><span></span><span></span></span>Monthly report<span class="mk-live">updating</span></div>
+            <div class="mk-body">
+              <div class="mk-kpis mk-in">
+                <div class="mk-kpi"><span class="k-v mk-cnt" data-t="200" data-s="+">0</span><span class="k-l">Leads this period</span></div>
+                <div class="mk-kpi"><span class="k-v mk-cnt" data-t="3" data-p="&pound;">0</span><span class="k-l">Cost per lead</span></div>
+                <div class="mk-kpi"><span class="k-v">24/7</span><span class="k-l">AI coverage</span></div>
+              </div>
+              <div class="mk-chart mk-in" aria-hidden="true">
+                <i style="--h:0.35"></i><i style="--h:0.5"></i><i style="--h:0.42"></i><i style="--h:0.66"></i><i style="--h:0.78"></i><i class="hi" style="--h:0.95"></i>
+              </div>
+              <div class="mk-x" aria-hidden="true"><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span></div>
+            </div>
+          </div>
+          <p class="pane-cap">Sent monthly, explained on a call. <strong>You always know where you stand.</strong></p>
+        </div>
+
       </div>
     </div>
   </div>
@@ -313,5 +451,6 @@
   });
 })();
 </script>
+<script src="showcase.js" defer></script>
 </body>
 </html>
