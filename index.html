@@ -72,58 +72,71 @@
     </div>
   </div>
 
-  <div class="hero-visual">
-    <img class="hv-photo" src="Images/hero-venue.jpg" alt="Bright, modern fitness venue with floor-to-ceiling windows" fetchpriority="high">
+  <div class="hero-visual" id="heroVisual">
+    <img class="hv-photo" src="Images/hero-venue.jpg" alt="Bright, modern fitness venue with floor-to-ceiling windows and a turf sprint track" fetchpriority="high">
 
-    <div class="hv-card" style="top:16%; right:6%;">
-      <span class="hv-icon" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35 8.5 8.5 0 0 1-3.4-.7L3 21l1.85-5.55A8.38 8.38 0 0 1 4 11.5a8.5 8.5 0 1 1 17 0z"/></svg>
-      </span>
-      <div>
-        <p class="hv-label">AI conversations</p>
-        <p class="hv-sub">Always on.<br>Always following up.</p>
-      </div>
-    </div>
+    <svg class="hv-flow" id="hvFlow" aria-hidden="true">
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#EBD9A4"/>
+          <stop offset="55%" stop-color="#C2A050"/>
+          <stop offset="100%" stop-color="#EBD9A4"/>
+        </linearGradient>
+      </defs>
+    </svg>
 
-    <div class="hv-card" style="top:34%; left:16%;">
+    <div class="hv-card" id="hvc1" style="top:11%; left:15%;">
       <span class="hv-icon" aria-hidden="true">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </span>
       <div>
-        <p class="hv-label">Lead generation</p>
-        <p class="hv-sub">Live enquiries</p>
-        <p class="hv-num">247<span class="hv-delta">+28%</span></p>
-        <svg width="96" height="22" viewBox="0 0 96 22" fill="none" aria-hidden="true"><path d="M1 18 14 15l12 2 11-5 12 3 12-6 11 2 12-7 10 3" stroke="#75845A" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p class="hv-label"><span class="hv-step">01</span>Lead generation</p>
+        <p class="hv-sub">Meta campaigns, tracked<br>from click to member.</p>
+        <p class="hv-stat">&pound;3 cost per lead &middot; sector avg &pound;15&ndash;40</p>
       </div>
     </div>
 
-    <div class="hv-card" style="top:44%; right:3%;">
+    <div class="hv-card" id="hvc2" style="top:15%; right:5%;">
       <span class="hv-icon" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35 8.5 8.5 0 0 1-3.4-.7L3 21l1.85-5.55A8.38 8.38 0 0 1 4 11.5a8.5 8.5 0 1 1 17 0z"/></svg>
       </span>
       <div>
-        <p class="hv-label">CRM &amp; automation</p>
-        <p class="hv-sub">One source<br>of truth.</p>
+        <p class="hv-label"><span class="hv-step">02</span>AI conversations</p>
+        <p class="hv-sub">Every enquiry answered<br>and qualified in seconds.</p>
+        <p class="hv-stat">24/7 &middot; no missed messages</p>
       </div>
     </div>
 
-    <div class="hv-card" style="bottom:22%; left:8%;">
+    <div class="hv-card" id="hvc3" style="top:47%; left:9%;">
       <span class="hv-icon" aria-hidden="true">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
       </span>
       <div>
-        <p class="hv-label">Bookings</p>
-        <p class="hv-sub">More shows.<br>Fewer no-shows.</p>
+        <p class="hv-label"><span class="hv-step">03</span>Bookings</p>
+        <p class="hv-sub">Qualified leads booked<br>straight into the diary.</p>
+        <p class="hv-stat">Reminders cut no-shows</p>
       </div>
     </div>
 
-    <div class="hv-card" style="bottom:12%; right:10%;">
+    <div class="hv-card" id="hvc4" style="top:53%; right:4%;">
+      <span class="hv-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </span>
+      <div>
+        <p class="hv-label"><span class="hv-step">04</span>CRM &amp; automation</p>
+        <p class="hv-sub">One record of every lead,<br>booking and follow-up.</p>
+        <p class="hv-stat">100% tracked, end to end</p>
+      </div>
+    </div>
+
+    <div class="hv-card" id="hvc5" style="bottom:8%; right:24%;">
       <span class="hv-icon" aria-hidden="true">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M7 21V13"/><path d="M12 21V9"/><path d="M17 21V5"/></svg>
       </span>
       <div>
-        <p class="hv-label">Membership growth</p>
-        <p class="hv-sub">Stronger retention.<br>More revenue.</p>
+        <p class="hv-label"><span class="hv-step">05</span>Membership growth</p>
+        <p class="hv-sub">Retention and revenue,<br>measured monthly.</p>
+        <p class="hv-stat">200+ qualified leads per campaign</p>
       </div>
     </div>
   </div>
@@ -408,6 +421,58 @@
       if (p < 1) requestAnimationFrame(tick);
     })(start);
   }
+
+  /* hero flow lines */
+  var flowHost = document.getElementById('heroVisual');
+  var flowSvg  = document.getElementById('hvFlow');
+  var CHAIN = ['hvc1', 'hvc2', 'hvc3', 'hvc4', 'hvc5'];
+  var SVGNS = 'http://www.w3.org/2000/svg';
+
+  function anchor(rect, host, towards) {
+    var x, y;
+    var dx = towards.x - (rect.left + rect.width / 2);
+    var dy = towards.y - (rect.top + rect.height / 2);
+    if (Math.abs(dx) > Math.abs(dy)) {
+      x = dx > 0 ? rect.right : rect.left;
+      y = rect.top + rect.height / 2;
+    } else {
+      x = rect.left + rect.width / 2;
+      y = dy > 0 ? rect.bottom : rect.top;
+    }
+    return { x: x - host.left, y: y - host.top };
+  }
+
+  function drawFlow() {
+    if (!flowHost || !flowSvg) return;
+    if (getComputedStyle(flowSvg).display === 'none') return;
+    var host = flowHost.getBoundingClientRect();
+    flowSvg.setAttribute('viewBox', '0 0 ' + host.width + ' ' + host.height);
+    flowSvg.querySelectorAll('path').forEach(function (p) { p.remove(); });
+    for (var i = 0; i < CHAIN.length - 1; i++) {
+      var a = document.getElementById(CHAIN[i]).getBoundingClientRect();
+      var b = document.getElementById(CHAIN[i + 1]).getBoundingClientRect();
+      var ac = { x: b.left + b.width / 2, y: b.top + b.height / 2 };
+      var bc = { x: a.left + a.width / 2, y: a.top + a.height / 2 };
+      var p1 = anchor(a, host, ac);
+      var p2 = anchor(b, host, bc);
+      var mx = (p1.x + p2.x) / 2;
+      var d = 'M' + p1.x + ',' + p1.y +
+              ' C' + mx + ',' + p1.y + ' ' + mx + ',' + p2.y +
+              ' ' + p2.x + ',' + p2.y;
+      var base = document.createElementNS(SVGNS, 'path');
+      base.setAttribute('d', d);
+      base.setAttribute('class', 'fl-base');
+      flowSvg.appendChild(base);
+      var pulse = document.createElementNS(SVGNS, 'path');
+      pulse.setAttribute('d', d);
+      pulse.setAttribute('class', 'fl-pulse');
+      pulse.setAttribute('pathLength', '100');
+      pulse.style.animationDelay = (i * 0.8) + 's';
+      flowSvg.appendChild(pulse);
+    }
+  }
+  window.addEventListener('load', function () { drawFlow(); setTimeout(drawFlow, 1200); });
+  window.addEventListener('resize', drawFlow);
 
   /* mobile menu */
   var ham = document.getElementById('ham');
