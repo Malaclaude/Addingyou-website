@@ -80,6 +80,7 @@ h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.02em; text-wrap: balance; 
 .hd {
   font-size: clamp(2rem, 4.4vw, 3.4rem);
   line-height: 1.06;
+  letter-spacing: -0.028em;
   margin: 1.1rem 0 1.4rem;
 }
 .hd em, .cta-hl em, .hhl em {
@@ -192,6 +193,7 @@ nav#nav.inked { border-bottom-color: var(--line); }
 .hhl {
   font-size: clamp(2.5rem, 4.6vw, 4.1rem);
   line-height: 1.04;
+  letter-spacing: -0.03em;
   margin: 1.3rem 0 0;
 }
 
@@ -563,6 +565,8 @@ nav#nav.inked { border-bottom-color: var(--line); }
   transition: transform 0.35s var(--ease), box-shadow 0.35s;
 }
 .cc:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); }
+a.cc:active, a.bcard:active { transform: scale(0.985); }
+.show-item:active { transform: scale(0.99); }
 .cc-tag {
   display: inline-block;
   font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
@@ -686,7 +690,16 @@ footer { border-top: 1px solid var(--line); }
 
 /* ---------- blog ---------- */
 
-.post-body { max-width: 68ch; }
+.post-body { max-width: 68ch; margin: 0 auto; }
+.post-body blockquote {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic; font-size: 1.45rem; line-height: 1.4;
+  color: var(--olive-deep);
+  border-left: 2px solid var(--gold);
+  padding: 0.4rem 0 0.4rem 1.6rem;
+  margin: 2.4rem 0;
+  text-wrap: pretty;
+}
 .post-body h2 { font-size: 1.6rem; margin: 2.6rem 0 1rem; }
 .post-body h3 { font-size: 1.2rem; margin: 2rem 0 0.8rem; }
 .post-body p { color: var(--ink-2); margin-bottom: 1.2rem; }
@@ -696,6 +709,19 @@ footer { border-top: 1px solid var(--line); }
 .post-meta { font-size: 0.82rem; color: var(--ink-3); }
 
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 3rem; }
+/* featured first post on the blog listing: break the equal-thirds row */
+.blog-grid.featured-first { grid-template-columns: repeat(2, 1fr); }
+.blog-grid.featured-first .bcard:first-child {
+  grid-column: 1 / -1;
+  flex-direction: row; align-items: flex-end; gap: 2.5rem;
+  padding: 2.4rem;
+  background: linear-gradient(120deg, var(--card) 55%, var(--sage) 160%);
+}
+.blog-grid.featured-first .bcard:first-child h3 {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 500;
+  letter-spacing: -0.02em; max-width: 22ch; flex: none;
+}
+.blog-grid.featured-first .bcard:first-child p { max-width: 52ch; }
 .bcard {
   background: var(--card); border: 1px solid var(--line);
   border-radius: var(--r-md); padding: 1.8rem;
