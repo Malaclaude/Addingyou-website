@@ -513,6 +513,17 @@ nav#nav.inked { border-bottom-color: var(--line); }
 .mk-post.reel { border-left: 2px solid var(--olive); }
 .mk-post.story { border-left: 2px solid var(--gold); }
 
+/* model chips (bespoke builds pane) */
+.mk-models {
+  display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap;
+  font-size: 0.72rem; color: var(--ink-3);
+}
+.mk-model {
+  background: var(--sage); color: var(--olive-deep);
+  font-weight: 600; font-size: 0.66rem; letter-spacing: 0.06em;
+  padding: 0.3rem 0.6rem; border-radius: 6px;
+}
+
 /* funnel row */
 .mk-funnel { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
 .mk-stage {
