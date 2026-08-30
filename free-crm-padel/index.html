@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free CRM for UK Padel Clubs | ADDINGYOU</title>
+<meta name="description" content="A free CRM system for UK padel clubs already taking bookings. Every player in one place, automatic rebooking chase, membership tracking. No setup fee, no card.">
+<link rel="canonical" href="https://addingyou.com/free-crm-padel/">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Free CRM for UK Padel Clubs | ADDINGYOU">
+<meta property="og:description" content="Your booking system takes the booking. It does not chase the rebook. We give padel clubs the CRM layer that does, free.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://addingyou.com/free-crm-padel/">
+<meta property="og:image" content="https://addingyou.com/Images/hero-venue.jpg">
+<meta property="og:site_name" content="ADDINGYOU">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free CRM for UK Padel Clubs | ADDINGYOU">
+<meta name="twitter:description" content="Your booking system takes the booking. It does not chase the rebook. We give padel clubs the CRM layer that does, free.">
+<meta name="twitter:image" content="https://addingyou.com/Images/hero-venue.jpg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+
+<!-- ============================================================
+     META PIXEL
+     Dataset ID set 30 Aug 2026. This is the same dataset the Flask
+     backend posts Conversions API events to (META_PIXEL_ID in
+     ay-free-crm), which is what allows the two Lead events to be
+     deduplicated against each other. If this ID and the server's ever
+     diverge, every lead is counted twice.
+
+     The ID is public by design: it identifies the dataset, it does not
+     authorise writing to it. The CAPI access token is the secret, and it
+     lives on the server only. It must never appear in this file.
+     ============================================================ -->
+<script>
+var FB_PIXEL_ID = '970539459402079';
+</script>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+if (FB_PIXEL_ID) {
+  fbq('init', FB_PIXEL_ID);
+  fbq('track', 'PageView');
+}
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></noscript>
+
+<style>
+/* ---------- landing-page-only styles ---------- */
+
+.lp-nav {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(1.25rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem);
+  max-width: 1280px; margin: 0 auto;
+  color: #fff;
+}
+.lp-nav .nl { display: inline-flex; align-items: center; }
+.lp-nav .lp-nav-note { font-size: 0.85rem; color: rgba(255,255,255,0.62); }
+@media (max-width: 560px) { .lp-nav .lp-nav-note { display: none; } }
+
+/* ---------- HERO (full-bleed padel photo, copy + form overlaid) ---------- */
+
+.lp-hero {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+  /* fallback colour shows if the photo is slow or missing, so it never looks broken */
+  background-color: #1B2117;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(14, 18, 12, 0.94) 0%,
+      rgba(14, 18, 12, 0.80) 42%,
+      rgba(14, 18, 12, 0.55) 70%,
+      rgba(14, 18, 12, 0.45) 100%
+    ),
+    url("https://images.pexels.com/photos/35261961/pexels-photo-35261961.jpeg?auto=compress&cs=tinysrgb&w=2200");
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+@media (max-width: 940px) {
+  /* stack the gradient top-to-bottom on mobile so text stays readable */
+  .lp-hero {
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(14, 18, 12, 0.92) 0%,
+        rgba(14, 18, 12, 0.86) 55%,
+        rgba(14, 18, 12, 0.94) 100%
+      ),
+      url("https://images.pexels.com/photos/35261961/pexels-photo-35261961.jpeg?auto=compress&cs=tinysrgb&w=1400");
+  }
+}
+
+.lp-hero-grid {
+  display: grid; grid-template-columns: 0.86fr 1.14fr;
+  gap: clamp(2rem, 5vw, 4rem); align-items: center;
+}
+@media (max-width: 1040px) {
+  .lp-hero-grid { grid-template-columns: 1fr; gap: 2.25rem; align-items: start; }
+}
+
+/* light-on-dark treatment for the hero copy */
+.lp-hero .eye { color: var(--gold-lt); }
+.lp-hero .eye::before { background: var(--gold); }
+
+.lp-h1 {
+  font-size: clamp(2.1rem, 5vw, 3.5rem);
+  line-height: 1.04; letter-spacing: -0.03em;
+  margin: 1rem 0 1.25rem;
+  color: #fff;
+}
+.lp-h1 em {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic; font-weight: 400; color: var(--gold-lt); letter-spacing: 0;
+}
+.lp-sub {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.08rem; max-width: 32rem; text-wrap: pretty;
+}
+
+.lp-ticks { list-style: none; margin-top: 1.9rem; display: grid; gap: 0.7rem; }
+.lp-ticks li {
+  position: relative; padding-left: 1.75rem;
+  color: rgba(255, 255, 255, 0.86); font-size: 0.96rem; line-height: 1.45;
+}
+.lp-ticks li::before {
+  content: ""; position: absolute; left: 0; top: 0.34em;
+  width: 15px; height: 8px; border-left: 2px solid var(--gold-lt);
+  border-bottom: 2px solid var(--gold-lt); transform: rotate(-45deg);
+}
+
+.lp-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+.lp-badge {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.09);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
+  font-size: 0.82rem; font-weight: 500;
+  padding: 0.45rem 0.85rem; border-radius: 999px;
+}
+.lp-badge::before { content: "✓"; font-size: 0.75rem; color: var(--gold-lt); }
+
+/* what you get, now its own light section below the hero */
+.lp-gets {
+  margin-top: 2.5rem;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+}
+@media (max-width: 760px) { .lp-gets { grid-template-columns: 1fr; } }
+.lp-get {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.35rem 1.4rem;
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r-md); box-shadow: var(--shadow-card);
+}
+.lp-get-n {
+  flex: none; width: 26px; height: 26px; border-radius: 7px;
+  background: var(--pill-dark); color: #fff;
+  font-size: 0.72rem; font-weight: 600;
+  display: grid; place-items: center; margin-top: 0.15rem;
+}
+.lp-get h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 0.2rem; }
+.lp-get p { font-size: 0.9rem; color: var(--ink-2); line-height: 1.55; }
+
+/* form card */
+.lp-form-card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r-lg); box-shadow: var(--shadow-soft);
+  padding: clamp(1.5rem, 2.6vw, 2.25rem);
+}
+
+.lp-form-card h2 { font-size: 1.3rem; letter-spacing: -0.02em; }
+.lp-form-card .lp-form-note {
+  font-size: 0.88rem; color: var(--ink-2); margin-top: 0.4rem;
+}
+.lp-form-divider { height: 1px; background: var(--line); margin: 1.4rem 0; }
+
+.lp-field { margin-bottom: 0.95rem; }
+.lp-field label {
+  display: block; font-size: 0.85rem; font-weight: 500;
+  margin-bottom: 0.4rem; color: var(--ink);
+}
+.lp-field .lp-hint {
+  display: block; font-size: 0.78rem; color: var(--ink-3);
+  font-weight: 400; margin-top: 0.15rem;
+}
+.lp-field input,
+.lp-field select,
+.lp-field textarea {
+  width: 100%; font-family: inherit; font-size: 0.95rem; color: var(--ink);
+  background: var(--paper); border: 1px solid rgba(21,24,28,0.16);
+  border-radius: var(--r-sm); padding: 0.75rem 0.85rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.lp-field textarea { resize: vertical; min-height: 96px; line-height: 1.5; }
+.lp-field input:focus,
+.lp-field select:focus,
+.lp-field textarea:focus {
+  outline: none; border-color: var(--olive); box-shadow: var(--glow-green);
+}
+.lp-field .req { color: var(--olive-deep); }
+
+.lp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+@media (max-width: 620px) { .lp-row { grid-template-columns: 1fr; gap: 0; } }
+
+/* keeps paired labels on one line so the two columns stay level with each other */
+.lp-field label { min-height: 1.2em; }
+.lp-row .lp-field .lp-hint { min-height: 2.2em; }
+@media (max-width: 620px) { .lp-row .lp-field .lp-hint { min-height: 0; } }
+
+/* ============================================================
+   MOTION
+   Everything is transform + opacity only, so it composites on the
+   GPU and never triggers layout. Nothing moves until the element
+   is actually in view, so scrolling stays cheap.
+   ============================================================ */
+
+/* Hero: staggered rise on load. Applied via .is-lit added by JS on
+   first paint, so there is no flash of already-animated content and
+   the page still reads fine if JS never runs. */
+.lp-rise {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.lp-hero.is-lit .lp-rise { opacity: 1; transform: none; }
+.lp-hero.is-lit .lp-rise:nth-child(1) { transition-delay: 0.05s; }
+.lp-hero.is-lit .lp-rise:nth-child(2) { transition-delay: 0.14s; }
+.lp-hero.is-lit .lp-rise:nth-child(3) { transition-delay: 0.23s; }
+.lp-hero.is-lit .lp-rise:nth-child(4) { transition-delay: 0.32s; }
+.lp-hero.is-lit .lp-rise:nth-child(5) { transition-delay: 0.41s; }
+
+/* The form card comes in from the right, slightly after the copy,
+   so the eye lands on the headline first and the form second. */
+.lp-form-card {
+  opacity: 0;
+  transform: translateY(22px) scale(0.985);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transition-delay: 0.3s;
+}
+.lp-hero.is-lit .lp-form-card { opacity: 1; transform: none; }
+
+/* Hero photo settles: a very slow scale-down so the image feels alive
+   for the first few seconds without anything obviously "animating". */
+@keyframes lpSettle {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1); }
+}
+.lp-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: inherit;
+  animation: lpSettle 14s var(--ease) forwards;
+  z-index: 0;
+}
+.lp-hero > * { position: relative; z-index: 1; }
+
+/* Scroll reveal. JS adds .is-in when the element enters the viewport. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+/* stagger children of a revealed grid */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.reveal-stagger.is-in > *          { opacity: 1; transform: none; }
+.reveal-stagger.is-in > *:nth-child(1) { transition-delay: 0.00s; }
+.reveal-stagger.is-in > *:nth-child(2) { transition-delay: 0.09s; }
+.reveal-stagger.is-in > *:nth-child(3) { transition-delay: 0.18s; }
+.reveal-stagger.is-in > *:nth-child(4) { transition-delay: 0.27s; }
+
+/* Card hover lift. Subtle, and only where it implies interactivity. */
+.lp-get, .lp-tier {
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease),
+              border-color 0.35s var(--ease);
+}
+.lp-get:hover, .lp-tier:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Inputs: the focus ring grows rather than snapping on. */
+.lp-field input, .lp-field select, .lp-field textarea {
+  transition: border-color 0.2s var(--ease), box-shadow 0.25s var(--ease),
+              background 0.2s var(--ease);
+}
+
+/* Submit button: gentle pulse of the arrow, and a proper pressed state. */
+.lp-submit { transition: transform 0.2s var(--ease), background 0.25s, box-shadow 0.25s; }
+.lp-submit:hover:not(:disabled) { transform: translateY(-2px); }
+.lp-submit:active:not(:disabled) { transform: translateY(0); }
+.lp-submit:disabled { opacity: 0.65; cursor: progress; }
+
+/* FAQ rows open smoothly instead of snapping. */
+.lp-faq details p {
+  animation: lpFade 0.4s var(--ease);
+}
+@keyframes lpFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+.lp-faq summary::after { transition: transform 0.3s var(--ease); }
+.lp-faq details[open] summary::after { transform: rotate(180deg); }
+
+/* Success state: the tick draws itself in. */
+@keyframes lpPop {
+  0%   { opacity: 0; transform: scale(0.6); }
+  60%  { opacity: 1; transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+#lpSuccess .lp-tick { animation: lpPop 0.55s var(--ease) both; }
+#lpSuccess h2 { animation: lpFade 0.5s var(--ease) 0.15s both; }
+#lpSuccess p  { animation: lpFade 0.5s var(--ease) 0.25s both; }
+
+/* Anyone who has asked their OS to stop animations gets a static page.
+   Not optional, and it also covers low-power devices. */
+@media (prefers-reduced-motion: reduce) {
+  .lp-rise, .lp-form-card, .reveal, .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .lp-hero::before { animation: none; }
+  #lpSuccess .lp-tick, #lpSuccess h2, #lpSuccess p,
+  .lp-faq details p { animation: none; }
+  .lp-get:hover, .lp-tier:hover, .lp-submit:hover:not(:disabled) { transform: none; }
+}
+
+/* submission error, hidden until the POST actually fails */
+.lp-error {
+  display: none;
+  background: #FDF2F2; border: 1px solid #E9C9C9; color: #8A2F2F;
+  border-radius: var(--r-sm); padding: 0.85rem 0.95rem;
+  font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;
+}
+.lp-error a { color: #8A2F2F; text-decoration: underline; text-underline-offset: 2px; }
+
+/* honeypot: off-screen rather than display:none, which some bots detect */
+.lp-hp {
+  position: absolute; left: -9999px; width: 1px; height: 1px;
+  overflow: hidden; opacity: 0; pointer-events: none;
+}
+
+/* terms consent tick-box */
+.lp-consent {
+  display: flex; align-items: flex-start; gap: 0.7rem;
+  background: var(--paper); border: 1px solid rgba(21,24,28,0.16);
+  border-radius: var(--r-sm); padding: 0.85rem 0.95rem;
+  margin: 0.35rem 0 1.1rem;
+}
+.lp-consent input[type="checkbox"] {
+  flex: none; width: 18px; height: 18px; margin-top: 0.12rem;
+  accent-color: var(--olive-deep); cursor: pointer;
+}
+.lp-consent label {
+  font-size: 0.85rem; font-weight: 400; color: var(--ink-2);
+  line-height: 1.5; margin: 0; cursor: pointer;
+}
+.lp-consent a {
+  color: var(--olive-deep); text-decoration: underline; text-underline-offset: 2px;
+}
+.lp-consent:focus-within { border-color: var(--olive); box-shadow: var(--glow-green); }
+
+.lp-submit {
+  width: 100%; justify-content: center; margin-top: 0.5rem;
+  font-size: 1rem; padding: 1.05rem 1.7rem;
+}
+.lp-small {
+  font-size: 0.78rem; color: var(--ink-3); margin-top: 0.9rem;
+  line-height: 1.5; text-align: center;
+}
+.lp-small a { color: var(--olive-deep); text-decoration: underline; text-underline-offset: 2px; }
+
+/* proof strip */
+.lp-proof { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.lp-proof-inner {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(2.5rem, 5vw, 3.5rem) 0;
+}
+@media (max-width: 760px) { .lp-proof-inner { grid-template-columns: 1fr; gap: 1.75rem; } }
+.lp-stat .lp-stat-n {
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 500;
+  letter-spacing: -0.03em; line-height: 1;
+}
+.lp-stat .lp-stat-l { font-size: 0.9rem; color: var(--ink-2); margin-top: 0.5rem; }
+
+/* upsell tiers */
+.lp-tiers {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem; margin-top: 2.5rem; align-items: stretch;
+}
+@media (max-width: 900px) { .lp-tiers { grid-template-columns: 1fr; } }
+
+.lp-tier {
+  display: flex; flex-direction: column;
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r-lg); box-shadow: var(--shadow-card);
+  padding: clamp(1.4rem, 2.4vw, 1.9rem);
+}
+.lp-tier.is-featured {
+  border-color: var(--olive);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+.lp-tier-flag {
+  position: absolute; top: -0.72rem; left: clamp(1.4rem, 2.4vw, 1.9rem);
+  background: var(--pill-dark); color: #fff;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 0.32rem 0.7rem; border-radius: 999px;
+}
+.lp-tier-name {
+  font-size: 0.74rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--olive-deep);
+}
+.lp-tier-price {
+  font-size: clamp(1.7rem, 3vw, 2.15rem); font-weight: 500;
+  letter-spacing: -0.03em; line-height: 1; margin: 0.85rem 0 0.25rem;
+}
+.lp-tier-price span { font-size: 0.95rem; font-weight: 400; color: var(--ink-3); letter-spacing: 0; }
+.lp-tier-line { font-size: 0.92rem; color: var(--ink-2); line-height: 1.55; margin-bottom: 1.2rem; }
+.lp-tier ul { list-style: none; display: grid; gap: 0.6rem; margin-top: auto; }
+.lp-tier li {
+  position: relative; padding-left: 1.5rem;
+  font-size: 0.9rem; color: var(--ink-2); line-height: 1.5;
+}
+.lp-tier li::before {
+  content: ""; position: absolute; left: 0; top: 0.36em;
+  width: 12px; height: 6px;
+  border-left: 2px solid var(--olive); border-bottom: 2px solid var(--olive);
+  transform: rotate(-45deg);
+}
+.lp-tier-foot {
+  margin-top: 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line);
+  font-size: 0.85rem; color: var(--ink-3);
+}
+
+/* faq */
+.lp-faq { max-width: 46rem; margin: 0 auto; }
+.lp-faq details {
+  border-bottom: 1px solid var(--line); padding: 1.15rem 0;
+}
+.lp-faq summary {
+  cursor: pointer; font-weight: 500; font-size: 1rem;
+  list-style: none; display: flex; justify-content: space-between; gap: 1rem;
+}
+.lp-faq summary::-webkit-details-marker { display: none; }
+.lp-faq summary::after {
+  content: "+"; color: var(--olive-deep); font-size: 1.3rem; line-height: 1; flex: none;
+}
+.lp-faq details[open] summary::after { content: "−"; }
+.lp-faq details p { color: var(--ink-2); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.65; }
+
+/* footer */
+.lp-foot {
+  padding: 2.5rem 0 3rem; border-top: 1px solid var(--line);
+  font-size: 0.85rem; color: var(--ink-3);
+  display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;
+}
+
+/* success state */
+#lpSuccess { display: none; text-align: center; padding: 1rem 0; }
+#lpSuccess .lp-tick {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--sage); color: var(--olive-deep);
+  display: grid; place-items: center; margin: 0 auto 1.1rem;
+  font-size: 1.5rem;
+}
+#lpSuccess h2 { font-size: 1.35rem; margin-bottom: 0.6rem; }
+#lpSuccess p { color: var(--ink-2); font-size: 0.95rem; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#form">Skip to the form</a>
+
+<main id="main">
+
+<!-- NAV sits INSIDE the hero so the logo reads white-on-photo.
+     Deliberately stripped back: no menu links, nothing to click away with. -->
+
+
+<!-- ============================ HERO + FORM ============================ -->
+<section class="lp-hero">
+  <nav class="lp-nav">
+    <a href="https://addingyou.com/" class="nl" aria-label="ADDINGYOU home">
+      <img src="/logo-mark-white.png" alt="ADDINGYOU" height="30">
+    </a>
+    <span class="lp-nav-note">UK based · Built for padel</span>
+  </nav>
+
+  <div class="wrap">
+    <div class="lp-hero-grid">
+
+      <!-- LEFT: the offer -->
+      <div>
+        <span class="eye lp-rise">Free for UK padel clubs</span>
+
+        <h1 class="lp-h1 lp-rise">
+          Your booking system takes the booking.<br>
+          It doesn't chase the <em>rebook.</em>
+        </h1>
+
+        <p class="lp-sub lp-rise">
+          Playtomic and Playskan are great at filling a slot. Neither one tells you who
+          hasn't played in three weeks, which member is about to lapse, or which
+          pay-as-you-go player should have been sold a membership by now.
+          We give padel clubs that layer. Free.
+        </p>
+
+        <ul class="lp-ticks lp-rise">
+          <li>Every player, booking and enquiry in one place</li>
+          <li>Rebooking chased automatically, not remembered</li>
+          <li>Pay-as-you-play players surfaced for membership</li>
+        </ul>
+
+        <div class="lp-badges lp-rise">
+          <span class="lp-badge">No setup fee</span>
+          <span class="lp-badge">No subscription</span>
+          <span class="lp-badge">Yours to keep</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: the form -->
+      <div>
+        <div class="lp-form-card" id="form">
+
+          <div id="lpFormWrap">
+            <h2>Claim your free CRM</h2>
+            <p class="lp-form-note">
+              Takes about two minutes. We check every application against Companies House
+              and read your answers ourselves, then email your login if your club is a fit.
+            </p>
+
+            <div class="lp-form-divider"></div>
+
+            <!-- ============================================================
+                 FORM
+                 Point action= at your GHL onboarding endpoint, OR delete this
+                 whole <form> block and paste the GHL embed iframe in its place.
+                 Field names are already snake_case and ready to map to GHL
+                 custom fields.
+                 ============================================================ -->
+            <form id="lpForm" method="POST" action="#" novalidate>
+
+              <!-- Honeypot. Hidden from humans, bots fill it in. Server drops any
+                   submission where this has a value. Do not remove. -->
+              <div class="lp-hp" aria-hidden="true">
+                <label for="company_website_url">Leave this field empty</label>
+                <input type="text" id="company_website_url" name="company_website_url"
+                       tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="lp-row">
+                <div class="lp-field">
+                  <label for="first_name">First name <span class="req">*</span></label>
+                  <input type="text" id="first_name" name="first_name" autocomplete="given-name" required>
+                </div>
+                <div class="lp-field">
+                  <label for="last_name">Last name <span class="req">*</span></label>
+                  <input type="text" id="last_name" name="last_name" autocomplete="family-name" required>
+                </div>
+              </div>
+
+              <div class="lp-row">
+                <div class="lp-field">
+                  <label for="email">Work email <span class="req">*</span></label>
+                  <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+                <div class="lp-field">
+                  <label for="phone">Mobile <span class="req">*</span></label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                </div>
+              </div>
+
+              <div class="lp-row">
+                <div class="lp-field">
+                  <label for="club_name">Club name <span class="req">*</span></label>
+                  <input type="text" id="club_name" name="club_name" autocomplete="organization" required>
+                </div>
+                <div class="lp-field">
+                  <label for="company_number">Company number <span class="req">*</span></label>
+                  <input type="text" id="company_number" name="company_number" inputmode="numeric" maxlength="8" placeholder="e.g. 16557882" required>
+                </div>
+              </div>
+
+              <div class="lp-row">
+                <div class="lp-field">
+                  <label for="booking_platform">Booking platform <span class="req">*</span></label>
+                  <select id="booking_platform" name="booking_platform" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option value="playtomic">Playtomic</option>
+                    <option value="playskan">Playskan</option>
+                    <option value="matchi">MATCHi</option>
+                    <option value="courtbrain">Courtbrain</option>
+                    <option value="other_platform">Other</option>
+                    <option value="phone_whatsapp">Phone / WhatsApp</option>
+                    <option value="not_open_yet">Not open yet</option>
+                  </select>
+                </div>
+                <div class="lp-field">
+                  <label for="courts">Number of courts <span class="req">*</span></label>
+                  <select id="courts" name="courts" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option value="1-2">1 to 2</option>
+                    <option value="3-5">3 to 5</option>
+                    <option value="6-11">6 to 11</option>
+                    <option value="12+">12 or more</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="lp-row">
+                <div class="lp-field">
+                  <label for="team_size">Team size <span class="req">*</span></label>
+                  <select id="team_size" name="team_size" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option value="just_me">Just me</option>
+                    <option value="2-4">2 to 4</option>
+                    <option value="5-20">5 to 20</option>
+                    <option value="21-50">21 to 50</option>
+                    <option value="50+">More than 50</option>
+                  </select>
+                </div>
+                <div class="lp-field">
+                  <label for="current_crm">Current CRM <span class="req">*</span></label>
+                  <select id="current_crm" name="current_crm" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option value="none">None</option>
+                    <option value="spreadsheet">Spreadsheets</option>
+                    <option value="booking_only">Booking platform only</option>
+                    <option value="paid_crm">We pay for one</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="lp-field">
+                <label for="biggest_gap">What are you struggling with? <span class="req">*</span>
+                  <span class="lp-hint">A sentence or two on how you currently manage players and bookings.</span>
+                </label>
+                <textarea id="biggest_gap" name="biggest_gap" minlength="25" required
+                  placeholder="e.g. We've no idea who's stopped coming. People play for a month, drop off, and we only notice when the courts look quiet."></textarea>
+              </div>
+
+              <div id="lpError" class="lp-error" role="alert">
+                Something went wrong sending your application. Please email
+                <a href="mailto:info@addingyou.com?subject=Free%20CRM%20application">info@addingyou.com</a>
+                and we'll set you up by hand.
+              </div>
+
+              <div class="lp-consent">
+                <input type="checkbox" id="accept_terms" name="accept_terms" value="yes" required>
+                <label for="accept_terms">
+                  I've read and agree to the
+                  <a href="/terms-free-crm.html" target="_blank" rel="noopener">free account terms</a>,
+                  including the data processing terms.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-dark lp-submit">
+                Create my free CRM <span class="arr">↗</span>
+              </button>
+
+              <p class="lp-small">
+                Every application is checked against Companies House and read by a person.
+                If your club is a fit we'll email your login, usually inside one working day.
+                No card, no sales call unless you ask for one.
+              </p>
+            </form>
+          </div>
+
+          <!-- success state, shown after submit -->
+          <div id="lpSuccess">
+            <div class="lp-tick">✓</div>
+            <h2>Application received</h2>
+            <p>
+              We check every application against Companies House and read it ourselves,
+              so this is not instant. If your club is a fit we'll email your login, usually
+              inside one working day. Keep an eye on your spam folder just in case.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WHAT YOU GET ============================ -->
+<section class="sec" style="padding-bottom: clamp(3rem, 6vw, 5rem);">
+  <div class="wrap">
+    <span class="eye reveal">What you get, free</span>
+    <h2 class="hd reveal" style="margin-bottom: 0.5rem;">Four things your booking<br>platform doesn't <em>do.</em></h2>
+
+    <div class="lp-gets reveal-stagger">
+      <div class="lp-get">
+        <span class="lp-get-n">01</span>
+        <div>
+          <h3>Every player in one place</h3>
+          <p>Court bookings, coaching, memberships and enquiries against one record per person, instead of spread across a booking app, a WhatsApp group and someone's inbox.</p>
+        </div>
+      </div>
+      <div class="lp-get">
+        <span class="lp-get-n">02</span>
+        <div>
+          <h3>Automatic rebooking chase</h3>
+          <p>A player who hasn't been back in three weeks gets a nudge without anyone remembering to send it. An empty peak-time court is the most expensive thing in the building.</p>
+        </div>
+      </div>
+      <div class="lp-get">
+        <span class="lp-get-n">03</span>
+        <div>
+          <h3>Pay-as-you-play to member</h3>
+          <p>Spot the regulars who are paying by the hour and would be better off (and worth more to you) on a membership. Then run that conversation automatically.</p>
+        </div>
+      </div>
+      <div class="lp-get">
+        <span class="lp-get-n">04</span>
+        <div>
+          <h3>Every enquiry answered</h3>
+          <p>Messages from Instagram, your website and email land in one inbox with reminders, so nothing sits unread until the person books somewhere else.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROOF ============================ -->
+<section class="lp-proof">
+  <div class="wrap">
+    <div class="lp-proof-inner reveal-stagger">
+      <div class="lp-stat">
+        <div class="lp-stat-n">£3</div>
+        <div class="lp-stat-l">Cost per qualified lead for an indoor golf venue we run campaigns for. Sector average is £15 to £40.</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat-n">24/7</div>
+        <div class="lp-stat-l">AI enquiry cover live across client venues. Messages answered at 9pm on a Sunday, without staff hours.</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat-n">2026</div>
+        <div class="lp-stat-l">Northampton based, working with sport and leisure venues across the UK. We know padel because we're in these buildings.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TIERS ============================ -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eye reveal">If you want it done for you</span>
+    <h2 class="hd reveal" style="margin-bottom:0.5rem;">The system is free.<br>Building it out properly <em>isn't.</em></h2>
+    <p class="lead reveal">
+      Most clubs take the account and set it up themselves. If you'd rather not,
+      here's what it costs to have us do it.
+    </p>
+
+    <div class="lp-tiers reveal-stagger">
+
+      <div class="lp-tier">
+        <span class="lp-tier-name">Free</span>
+        <div class="lp-tier-price">£0</div>
+        <p class="lp-tier-line">The full system, your account, set up by you.</p>
+        <ul>
+          <li>Generous player and booking limits</li>
+          <li>Pipelines, automations and messaging</li>
+          <li>Email, SMS and social inboxes</li>
+          <li>Reporting dashboards</li>
+          <li>Self-serve, no build support</li>
+        </ul>
+        <div class="lp-tier-foot">What you're applying for above.</div>
+      </div>
+
+      <div class="lp-tier is-featured">
+        <span class="lp-tier-flag">Most clubs pick this</span>
+        <span class="lp-tier-name">Managed</span>
+        <div class="lp-tier-price">£1,500 <span>/ month</span></div>
+        <p class="lp-tier-line">We build it, then we run it. Month to month, no lock-in.</p>
+        <ul>
+          <li>Everything in Build, included</li>
+          <li>Campaigns and content run for you</li>
+          <li>Conversational AI answering enquiries 24/7</li>
+          <li>Ongoing optimisation and new automations</li>
+          <li>Monthly reporting and strategy call</li>
+        </ul>
+        <div class="lp-tier-foot">Build cost absorbed into the first month.</div>
+      </div>
+
+      <div class="lp-tier">
+        <span class="lp-tier-name">Build</span>
+        <div class="lp-tier-price">£2,000 <span>one-off</span></div>
+        <p class="lp-tier-line">We configure the whole thing around your club, then hand you the keys.</p>
+        <ul>
+          <li>Pipelines mapped to how your club runs</li>
+          <li>Rebooking and retention automations live</li>
+          <li>Membership journey built end to end</li>
+          <li>Booking platform and payments connected</li>
+          <li>Team trained, then it's yours to run</li>
+        </ul>
+        <div class="lp-tier-foot">Typically live in two to four weeks.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="sec" style="padding-top:0;">
+  <div class="wrap">
+    <div class="lp-faq reveal">
+
+      <details>
+        <summary>Is it actually free, or free for 14 days?</summary>
+        <p>Actually free. No trial window, no card, no auto-billing. Your account stays open as long as you're using it. Fair use applies and email or SMS sending is charged at cost, but there is no subscription and nothing starts billing automatically.</p>
+      </details>
+
+      <details>
+        <summary>What does "fair use" mean?</summary>
+        <p>The account is for running your club. It comes with generous limits on contacts and monthly sends that no normal padel club will reach. Email and SMS sending sits on your own account at cost price, so heavy senders pay their own way. Accounts left completely unused for 90 days get archived, and we'll email you first.</p>
+      </details>
+
+      <details>
+        <summary>Does this replace Playtomic or Playskan?</summary>
+        <p>No, and it isn't trying to. Your booking platform stays exactly where it is. This sits behind it and handles everything that happens between bookings: the follow-up, the retention, the membership conversations, the enquiries that never make it as far as a booking.</p>
+      </details>
+
+      <details>
+        <summary>Why do you need our Companies House number?</summary>
+        <p>To confirm you're a real trading UK club before we create an account. It stops us handing out systems to people who aren't running a venue, which is what keeps this sustainable enough to give away.</p>
+      </details>
+
+      <details>
+        <summary>We're not open yet. Can we still apply?</summary>
+        <p>Yes, and honestly it's a good time to do it. Setting up how you'll capture and keep players before opening day is far easier than retrofitting it once you're busy. Just pick "we're not open yet" on the form.</p>
+      </details>
+
+      <details>
+        <summary>How long until we get access?</summary>
+        <p>Usually inside one working day. Every application is checked against Companies House and then read by one of us, rather than approved by a script, so it is not instant. If your club is a fit we email your login. If it isn't, we tell you rather than leaving you waiting.</p>
+      </details>
+
+      <details>
+        <summary>What happens to our data?</summary>
+        <p>It's your account and your data. We don't sell it, share it, or market to your players. You stay the data controller for your members and we act as processor, covered by a standard data processing agreement you'll get with your login. If you ever want out, you export your data and go.</p>
+      </details>
+
+      <details>
+        <summary>Is there any support included?</summary>
+        <p>Not on the free account, and we'd rather say so up front than pretend otherwise. You get the system and the documentation. If you want us in it with you, that's the paid build.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<footer class="wrap lp-foot">
+  <span>© 2026 ADDINGYOU. UK based.</span>
+  <span>
+    <a href="mailto:info@addingyou.com">info@addingyou.com</a>
+    &nbsp;·&nbsp;
+    <a href="/terms-free-crm.html">Free account terms</a>
+  </span>
+</footer>
+
+</main>
+
+<script>
+/* ============================================================
+   Form handling. Posts to the ay-free-crm service, which runs the
+   Companies House check, the rules engine and the classifier, then
+   creates the GHL account for approved clubs.
+
+   Set APPLY_ENDPOINT to the deployed Railway URL before going live.
+   ============================================================ */
+var APPLY_ENDPOINT = 'https://ay-free-crm-production.up.railway.app/apply';
+
+(function () {
+  var form = document.getElementById('lpForm');
+  if (!form) return;
+
+  var chNum  = document.getElementById('company_number');
+  var btn    = form.querySelector('.lp-submit');
+  var btnTxt = btn ? btn.innerHTML : '';
+
+  // strip anything that isn't a digit or letter from the CH number as they type
+  chNum.addEventListener('input', function () {
+    this.value = this.value.replace(/[^0-9A-Za-z]/g, '').toUpperCase();
+  });
+
+  function showSuccess() {
+    document.getElementById('lpFormWrap').style.display = 'none';
+    document.getElementById('lpSuccess').style.display = 'block';
+    document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  /* --------------------------------------------------------------
+     Meta attribution plumbing.
+
+     The server fires the same Lead event we do, because browser events
+     get eaten by Safari ITP, iOS privacy settings and ad blockers. For
+     that to be one lead rather than two, both sides must send the SAME
+     event_id, and the server needs the two Meta cookies the browser can
+     see and it cannot:
+
+       _fbc  the click that brought them here, set from fbclid
+       _fbp  a browser identifier the pixel generates
+
+     Neither is hashed and neither is personal data we chose to collect;
+     they are Meta's own identifiers being handed back to Meta.
+     -------------------------------------------------------------- */
+
+  function readCookie(name) {
+    var m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return m ? decodeURIComponent(m[2]) : '';
+  }
+
+  function newEventId() {
+    // crypto.randomUUID is unavailable on older Safari, which is a real slice
+    // of this audience, so fall back rather than throwing and losing the lead.
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+      return window.crypto.randomUUID();
+    }
+    return 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 11);
+  }
+
+  function queryParam(name) {
+    try {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    } catch (err) {
+      return '';
+    }
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    if (btn) { btn.disabled = true; btn.innerHTML = 'Checking your details…'; }
+
+    var payload = {};
+    new FormData(form).forEach(function (v, k) { payload[k] = v; });
+
+    // Generated once and used by BOTH the pixel call below and the server,
+    // which is the whole mechanism for not double counting this lead.
+    var eventId = newEventId();
+    payload.event_id = eventId;
+    payload.fbc      = readCookie('_fbc');
+    payload.fbp      = readCookie('_fbp');
+    payload.fbclid   = queryParam('fbclid');
+    payload.page_url = window.location.href.split('#')[0];
+
+    // A failed POST never reaches a server, so there is nothing to recover from
+    // logs. Showing a fake success would silently bin the lead. Show a real
+    // error with a way to reach us instead.
+    function showError() {
+      if (btn) { btn.disabled = false; btn.innerHTML = btnTxt; }
+      var box = document.getElementById('lpError');
+      if (box) {
+        box.style.display = 'block';
+        box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    fetch(APPLY_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        if (!res.ok) { throw new Error('HTTP ' + res.status); }
+        // Fire Lead ONLY on a confirmed submission. Firing it on click would
+        // count failed submits as leads and teach Meta to optimise for people
+        // who press the button rather than people who actually get through.
+        //
+        // The 4th argument carries eventID. The server sends Lead with the very
+        // same id, and Meta collapses the pair into one. Drop this and every
+        // lead is reported twice, which quietly doubles your apparent
+        // performance and halves your apparent cost per lead.
+        if (FB_PIXEL_ID && typeof fbq === 'function') {
+          fbq('track', 'Lead', {}, { eventID: eventId });
+        }
+        showSuccess();
+      })
+      .catch(function (err) {
+        console.error('apply failed', err);
+        showError();
+      });
+  });
+})();
+
+/* ============================================================
+   Motion. Progressive enhancement only: if this never runs, the
+   CSS fallbacks below leave everything visible and static.
+   ============================================================ */
+(function () {
+  var reduced = window.matchMedia &&
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var hero = document.querySelector('.lp-hero');
+
+  if (reduced || !('IntersectionObserver' in window)) {
+    if (hero) hero.classList.add('is-lit');
+    document.querySelectorAll('.reveal, .reveal-stagger')
+      .forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+
+  // Light the hero on the first frame after paint, so the transition
+  // actually runs rather than being applied before the browser draws.
+  if (hero) {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { hero.classList.add('is-lit'); });
+    });
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in');
+      io.unobserve(entry.target);   // one-way, never re-animate on scroll up
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
+
+  document.querySelectorAll('.reveal, .reveal-stagger')
+    .forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+<noscript>
+<style>
+  /* No JS: show everything, animate nothing. */
+  .lp-rise, .lp-form-card, .reveal, .reveal-stagger > * {
+    opacity: 1 !important; transform: none !important;
+  }
+</style>
+</noscript>
+
+</body>
+</html>
