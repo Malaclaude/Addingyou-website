@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free CRM for UK Padel Clubs | ADDINGYOU</title>
-<meta name="description" content="A free CRM system for UK padel clubs already taking bookings. Every player in one place, automatic rebooking chase, membership tracking. No setup fee, no card.">
-<link rel="canonical" href="https://addingyou.com/free-crm-padel/">
+<title>Free CRM for UK {{TITLE_NOUN}} | ADDINGYOU</title>
+<meta name="description" content="{{META_DESC}}">
+<link rel="canonical" href="https://addingyou.com/{{SLUG}}/">
 <meta name="robots" content="noindex, follow">
-<meta property="og:title" content="Free CRM for UK Padel Clubs | ADDINGYOU">
-<meta property="og:description" content="Your booking system takes the booking. It does not chase the rebook. We give padel clubs the CRM layer that does, free.">
+<meta property="og:title" content="Free CRM for UK {{TITLE_NOUN}} | ADDINGYOU">
+<meta property="og:description" content="{{OG_DESC}}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://addingyou.com/free-crm-padel/">
+<meta property="og:url" content="https://addingyou.com/{{SLUG}}/">
 <meta property="og:image" content="https://addingyou.com/Images/hero-venue.jpg">
 <meta property="og:site_name" content="ADDINGYOU">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free CRM for UK Padel Clubs | ADDINGYOU">
-<meta name="twitter:description" content="Your booking system takes the booking. It does not chase the rebook. We give padel clubs the CRM layer that does, free.">
+<meta name="twitter:title" content="Free CRM for UK {{TITLE_NOUN}} | ADDINGYOU">
+<meta name="twitter:description" content="{{OG_DESC}}">
 <meta name="twitter:image" content="https://addingyou.com/Images/hero-venue.jpg">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -86,7 +86,7 @@ src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></no
       rgba(14, 18, 12, 0.55) 70%,
       rgba(14, 18, 12, 0.45) 100%
     ),
-    url("https://images.pexels.com/photos/35261961/pexels-photo-35261961.jpeg?auto=compress&cs=tinysrgb&w=2200");
+    url("{{HERO_IMG}}&w=2200");
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
@@ -102,7 +102,7 @@ src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></no
         rgba(14, 18, 12, 0.86) 55%,
         rgba(14, 18, 12, 0.94) 100%
       ),
-      url("https://images.pexels.com/photos/35261961/pexels-photo-35261961.jpeg?auto=compress&cs=tinysrgb&w=1400");
+      url("{{HERO_IMG}}&w=1400");
   }
 }
 
@@ -506,7 +506,7 @@ src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></no
     <a href="https://addingyou.com/" class="nl" aria-label="ADDINGYOU home">
       <img src="/logo-mark-white.png" alt="ADDINGYOU" height="30">
     </a>
-    <span class="lp-nav-note">UK based · Built for padel</span>
+    <span class="lp-nav-note">{{NAV_NOTE}}</span>
   </nav>
 
   <div class="wrap">
@@ -514,7 +514,7 @@ src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></no
 
       <!-- LEFT: the offer -->
       <div>
-        <span class="eye lp-rise">Free for UK padel clubs</span>
+        <span class="eye lp-rise">{{EYEBROW}}</span>
 
         <h1 class="lp-h1 lp-rise">
           Your booking system takes the booking.<br>
@@ -522,10 +522,7 @@ src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></no
         </h1>
 
         <p class="lp-sub lp-rise">
-          Playtomic and Playskan are great at filling a slot. Neither one tells you who
-          hasn't played in three weeks, which member is about to lapse, or which
-          pay-as-you-go player should have been sold a membership by now.
-          We give padel clubs that layer. Free.
+          {{HERO_SUB}}
         </p>
 
         <ul class="lp-ticks lp-rise">
@@ -568,7 +565,7 @@ src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></no
               <!-- Which vertical page this came from. Carried through to a tag on
                    the GHL contact so the list can be segmented later, and so the
                    nurture can speak the right language. -->
-              <input type="hidden" name="vertical" value="padel">
+              <input type="hidden" name="vertical" value="{{VERTICAL}}">
 
               <div class="lp-hp" aria-hidden="true">
                 <label for="company_website_url">Leave this field empty</label>
@@ -614,23 +611,14 @@ src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></no
                   <label for="booking_platform">Booking platform <span class="req">*</span></label>
                   <select id="booking_platform" name="booking_platform" required>
                     <option value="" selected disabled>Select one</option>
-                    <option value="playtomic">Playtomic</option>
-                    <option value="playskan">Playskan</option>
-                    <option value="matchi">MATCHi</option>
-                    <option value="courtbrain">Courtbrain</option>
-                    <option value="other_platform">Other</option>
-                    <option value="phone_whatsapp">Phone / WhatsApp</option>
-                    <option value="not_open_yet">Not open yet</option>
+                    {{PLATFORMS}}
                   </select>
                 </div>
                 <div class="lp-field">
-                  <label for="courts">Number of courts <span class="req">*</span></label>
+                  <label for="courts">{{CAPACITY_LABEL}} <span class="req">*</span></label>
                   <select id="courts" name="courts" required>
                     <option value="" selected disabled>Select one</option>
-                    <option value="1-2">1 to 2</option>
-                    <option value="3-5">3 to 5</option>
-                    <option value="6-11">6 to 11</option>
-                    <option value="12+">12 or more</option>
+                    {{CAPACITY_OPTIONS}}
                   </select>
                 </div>
               </div>
@@ -664,7 +652,7 @@ src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></no
                   <span class="lp-hint">A sentence or two on how you currently manage players and bookings.</span>
                 </label>
                 <textarea id="biggest_gap" name="biggest_gap" minlength="25" required
-                  placeholder="e.g. We've no idea who's stopped coming. People play for a month, drop off, and we only notice when the courts look quiet."></textarea>
+                  placeholder="{{PLACEHOLDER}}"></textarea>
               </div>
 
               <div id="lpError" class="lp-error" role="alert">
@@ -723,14 +711,14 @@ src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></no
         <span class="lp-get-n">01</span>
         <div>
           <h3>Every player in one place</h3>
-          <p>Court bookings, coaching, memberships and enquiries against one record per person, instead of spread across a booking app, a WhatsApp group and someone's inbox.</p>
+          <p>{{GET_01}}</p>
         </div>
       </div>
       <div class="lp-get">
         <span class="lp-get-n">02</span>
         <div>
           <h3>Automatic rebooking chase</h3>
-          <p>A player who hasn't been back in three weeks gets a nudge without anyone remembering to send it. An empty peak-time court is the most expensive thing in the building.</p>
+          <p>{{GET_02}}</p>
         </div>
       </div>
       <div class="lp-get">
@@ -765,7 +753,7 @@ src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></no
       </div>
       <div class="lp-stat">
         <div class="lp-stat-n">2026</div>
-        <div class="lp-stat-l">Northampton based, working with sport and leisure venues across the UK. We know padel because we're in these buildings.</div>
+        <div class="lp-stat-l">{{STAT_LINE}}</div>
       </div>
     </div>
   </div>
@@ -842,11 +830,11 @@ src="https://www.facebook.com/tr?id=970539459402079&ev=PageView&noscript=1"></no
 
       <details>
         <summary>What does "fair use" mean?</summary>
-        <p>The account is for running your club. It comes with generous limits on contacts and monthly sends that no normal padel club will reach. Email and SMS sending sits on your own account at cost price, so heavy senders pay their own way. Accounts left completely unused for 90 days get archived, and we'll email you first.</p>
+        <p>{{FAIR_USE}}</p>
       </details>
 
       <details>
-        <summary>Does this replace Playtomic or Playskan?</summary>
+        <summary>{{FAQ_REPLACE_Q}}</summary>
         <p>No, and it isn't trying to. Your booking platform stays exactly where it is. This sits behind it and handles everything that happens between bookings: the follow-up, the retention, the membership conversations, the enquiries that never make it as far as a booking.</p>
       </details>
 
