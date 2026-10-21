@@ -1,3 +1,2 @@
-// Set the public relay endpoint only after deployment and end-to-end verification.
-// Never put the private CRM webhook URL in a website file.
-window.AY_VENUE_FORM = Object.freeze({ endpoint: '', enabled: false });
+// Public form relay. The private CRM webhook stays on the server.
+window.AY_VENUE_FORM = Object.freeze({ endpoint: 'https://ay-venue-capture.malachi109220.chatgpt.site/api/venue-enquiry', enabled: true });
