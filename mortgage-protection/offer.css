@@ -53,3 +53,12 @@ body{font-family:'Instrument Sans',sans-serif}.eyebrow{font-size:12px;letter-spa
 @media(max-width:850px){.reconnect-steps{gap:22px;padding:26px}.reconnect-steps h3{font-size:21px}.example-message{padding:15px}.example-message blockquote{font-size:16px}.reconnect-top{padding:20px 26px}}
 @media(max-width:650px){.reconnect-top{display:block;padding:18px 22px;font-size:14px}.reconnect-top>span:last-child{display:block;margin-top:5px}.reconnect-steps{grid-template-columns:1fr;gap:26px;padding:24px 22px}.reconnect-steps li{position:relative;padding-left:44px}.step-marker{position:absolute;left:0;top:0;bottom:-26px;margin:0;display:block;width:28px}.step-marker>span{width:28px;height:28px;font-size:11px}.step-marker>i{position:absolute;top:38px;bottom:0;left:14px;font-size:0;display:block;width:1px;background:#D3E4C7}.step-marker>i:before{display:none}.reconnect-steps li:last-child .step-marker>i{display:none}.reconnect-steps h3{font-size:22px;padding-top:1px}.reconnect-steps li>p{font-size:14px;max-width:none;margin:9px 0 15px}.example-message{min-height:0;padding:14px 16px}.example-message blockquote{font-size:16px;margin-top:5px}.reconnect-result{padding:22px;align-items:start;gap:13px}.reconnect-result strong{font-size:17px}.reconnect-result p{font-size:13px;margin-top:6px}.result-check{width:28px;height:28px}.reconnect-note{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.flow-seen .step-marker>span{animation:none}}
+
+/* Approved light-green AY mark, using the original silhouette at every size. */
+.brand-mark{--mark-size:157.5px;--mark-x:-37.3px;--mark-y:-52px}
+.brand-mark img{opacity:0}
+.brand-mark::after{content:"";position:absolute;inset:0;background:var(--brand-lime);-webkit-mask:url("./ay-brand-mark.png") var(--mark-x) var(--mark-y)/var(--mark-size) var(--mark-size) no-repeat;mask:url("./ay-brand-mark.png") var(--mark-x) var(--mark-y)/var(--mark-size) var(--mark-size) no-repeat;pointer-events:none}
+.brand-plaque{background:rgba(150,236,111,.08)}
+.brand-plaque .brand-mark{--mark-size:100px;--mark-x:-23.7px;--mark-y:-33px}
+.footer-top .brand-mark{--mark-size:134.4px;--mark-x:-31.9px;--mark-y:-44.4px}
+@media(max-width:600px){.nav-brand .brand-mark{--mark-size:134.4px;--mark-x:-31.9px;--mark-y:-44.4px}}
