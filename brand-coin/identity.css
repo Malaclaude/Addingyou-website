@@ -1,0 +1,4 @@
+/* Approved AY coin identity, 28 October 2026. */
+.ay-symbol{width:44px!important;height:44px!important;overflow:visible!important;flex:none!important}
+.ay-symbol img{position:static!important;width:100%!important;height:100%!important;max-width:100%!important;object-fit:contain!important;transform:none!important;filter:none!important}
+@media(max-width:600px){.ay-symbol{width:36px!important;height:36px!important}}
