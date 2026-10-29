@@ -23,7 +23,7 @@
   </url>
 
   <url>
-    <loc>https://addingyou.com/process.html</loc>
+    <loc>https://addingyou.com/how-it-works/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -78,4 +78,5 @@
     <priority>0.8</priority>
   </url>
 
+<url><loc>https://addingyou.com/about/</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
 </urlset>
