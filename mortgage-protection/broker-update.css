@@ -1,0 +1,18 @@
+/* Focused broker offer update. Keep the live AY identity and shared components. */
+.ay-broker .broker-crm-scene{background:#fff}
+.ay-broker .broker-crm-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.ay-broker .broker-crm-layout .scene-heading{margin:0}
+.ay-broker .broker-detail-list article{padding:28px 0;border-bottom:1px solid #d7e1ed}
+.ay-broker .broker-detail-list article:first-child{padding-top:0}
+.ay-broker .broker-detail-list .small-label{color:#536d8d;font-size:10px;letter-spacing:.08em}
+.ay-broker .broker-detail-list h3{font-size:25px;margin-top:12px}
+.ay-broker .broker-detail-list p{font-size:15px;line-height:1.8;margin-top:13px;color:#52667f}
+.ay-broker .broker-cover-title{font-size:clamp(38px,4.4vw,64px);letter-spacing:-.05em;line-height:1.12;color:#d3e4ff;margin:32px 0}
+.ay-broker .broker-commercial{grid-template-columns:1fr 1fr 1.2fr}
+.ay-broker .broker-commercial .commercial-term>strong{font-size:clamp(24px,2.2vw,32px);line-height:1.2;letter-spacing:-.035em}
+.ay-broker .broker-commercial .commercial-term>small{display:block;font-size:12px;line-height:1.7;margin-top:12px;color:#52667f}
+.ay-broker .hero-offer{max-width:470px}
+@media(max-width:850px){.ay-broker .broker-crm-layout{grid-template-columns:1fr;gap:36px}.ay-broker .broker-crm-layout .scene-heading{max-width:650px}.ay-broker .broker-commercial{grid-template-columns:1fr 1fr}.ay-broker .broker-commercial .commercial-costs{grid-column:1/-1;padding:20px 0 0;border-left:0;border-top:1px solid #c9d8ea}.ay-broker .broker-cover-title{font-size:46px}}
+@media(max-width:600px){.ay-broker .broker-detail-list h3{font-size:23px}.ay-broker .broker-detail-list p{font-size:14px}.ay-broker .broker-commercial{gap:22px}.ay-broker .broker-commercial .commercial-term>strong{font-size:23px}.ay-broker .broker-commercial .commercial-term>span{min-height:0}.ay-broker .broker-cover-title{font-size:44px;margin:24px 0}.ay-broker .hero-detail{max-width:36em}}
+
+@media(max-width:600px){.ay-broker .engagement-cover{display:flex;gap:0}.ay-broker .engagement-caption{align-self:stretch}.ay-broker .engagement-signature{padding-top:26px}}
